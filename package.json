@@ -1,0 +1,36 @@
+{
+  "name": "sync-diagram-into-confluence",
+  "version": "1.0.0",
+  "description": "This listens for svg files in a source folder and converts them to png before publishing through as confluence attachments",
+  "main": "index.js",
+  "watch": {
+    "sync": {
+      "patterns": [
+        "content"
+      ],
+      "extensions": "svg"
+    }
+  },
+  "scripts": {
+    "sync": "node sync.js",
+    "watch": "npm-watch"
+  },
+  "author": "phil@xceptionale.com",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-svg2png": "^2.0.0"
+  },
+  "dependencies": {
+    "ConfluencePageAttacher": "^1.0.3",
+    "debug": "^2.2.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-debug": "^2.1.2",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.6",
+    "svg2png": "^3.0.0",
+    "through2": "^2.0.1",
+    "yargs": "^4.7.1"
+  }
+}
