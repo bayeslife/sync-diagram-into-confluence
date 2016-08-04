@@ -9,13 +9,15 @@ module.exports = function() {
    * @this {Transform}
    */
   var transform = function(file, encoding, callback) {
-    util.log("Upload");
-    util.log(file.path);
+    console.log("Uploading" + file.path);
+    // setTimeout(function(){
+    //      console.log('Uploaded'+ file.path)
+    //      callback();
+    // },1000)
     publishModule.sync(file.path,function(){
       console.log('Published')
       callback();
     });
-
   };
 
   return through.obj(transform);
