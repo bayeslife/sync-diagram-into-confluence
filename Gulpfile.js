@@ -11,7 +11,7 @@ var gulpdebug = require('gulp-debug');
 var util = require('gulp-util');
 
 var up = require('./upload.js');
-var cv = require('./convert.js');
+var cv = require('./convert2.js');
 
 var pkg = require('./package.json');
 var args = yargs
@@ -28,8 +28,11 @@ var args = yargs
 var sourceFolder = args['s'];
 var destFolder= args['t'];
 
+var sf = path.join(sourceFolder,'/*.png');
+//console.log(sf);
+
 gulp.task('png',function() {
-  return watch([path.join(sourceFolder,'/*.png')])
+  return watch([path.join(destFolder,'/*.png')])
    .pipe(up())
 })
 

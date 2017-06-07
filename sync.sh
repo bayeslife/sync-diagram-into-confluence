@@ -1,2 +1,2 @@
-gulp -s /tmp/content -t /tmp/target
+gulp -s ~/vdfn-repo/content -t ~/vdfn-repo/content
 
