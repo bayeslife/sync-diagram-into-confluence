@@ -1,2 +1,4 @@
-gulp -s ~/vdfn-repo/content -t ~/vdfn-repo/content
+export DEBUG=*
+#export CONFLUENCEURL=https://tomlinsp:<password>@confluence.....
+gulp -s /home/phil/vdfn/content -t /home/phil/vdfn/content
 

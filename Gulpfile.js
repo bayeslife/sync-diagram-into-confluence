@@ -41,4 +41,5 @@ gulp.task('svg',function() {
     .pipe(cv())
 })
 
-gulp.task('default',['png','svg']);
+//gulp.task('default',['png','svg']);
+gulp.task('default',['svg']);

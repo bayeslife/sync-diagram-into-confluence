@@ -14,10 +14,10 @@ module.exports = function() {
    * @this {Transform}
    */
   var transform = function(file, encoding, callback) {
-    console.log("Converting" + file.path);
+    console.log("Converting:" + file.path.slice(0,-4)+".png");
     fs.readFile(file.path)
         .then(svg2png)
-        .then(buffer => fs.writeFile(path.join(file.path+'.png'), buffer))
+        .then(buffer => fs.writeFile(file.path.slice(0,-4)+'.png', buffer))
         .then(function(){
           console.log('Converted'+file.path);
           callback();
