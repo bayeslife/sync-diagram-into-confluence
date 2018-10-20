@@ -28,18 +28,19 @@ var args = yargs
 var sourceFolder = args['s'];
 var destFolder= args['t'];
 
-var sf = path.join(sourceFolder,'/*.png');
-//console.log(sf);
+var sf = path.join(sourceFolder,'/*.svg');
+var tf = path.join(destFolder,'/*.png');
+console.log(tf);
 
 gulp.task('png',function() {
-  return watch([path.join(destFolder,'/*.png')])
+  return watch([tf])
    .pipe(up())
 })
 
 gulp.task('svg',function() {
-  return watch([path.join(sourceFolder,'/*.svg')])
+  return watch([sf])
     .pipe(cv())
 })
 
-//gulp.task('default',['png','svg']);
-gulp.task('default',['svg']);
+gulp.task('default',['png','svg']);
+//gulp.task('default',['svg','png']);

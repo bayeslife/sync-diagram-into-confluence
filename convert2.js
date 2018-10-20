@@ -1,3 +1,4 @@
+var debug= require('debug')('syncconfluence')
 var through = require('through2');
 
 var util = require('gulp-util');
@@ -13,11 +14,12 @@ module.exports = function() {
    * @this {Transform}
    */
   var transform = function(file, encoding, callback) {
-    console.log("Converting2" + file.path);
+    debug("Converting2" + file.path);
 
     var dir = path.dirname(file.path);
     var pngdir = path.join(dir,"../png");
 
+    debug("Directory is:"+ dir);
     if(file.event!='unlink'){
       svg_to_png.convert(dir, pngdir) // async, returns promise
       .then( function(){

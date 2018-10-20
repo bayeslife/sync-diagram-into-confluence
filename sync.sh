@@ -1,4 +1,4 @@
 export DEBUG=*
 #export CONFLUENCEURL=https://tomlinsp:<password>@confluence.....
-gulp -s /home/phil/vdfn/content -t /home/phil/vdfn/content
+gulp -s /mnt/c/gti/content -t /mnt/c/gti/png
 
